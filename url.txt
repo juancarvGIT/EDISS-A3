@@ -1,4 +1,4 @@
-a7f5cbe85fa2041c8a06f21227f3b159-426201033.us-east-1.elb.amazonaws.com:80
-adb5014795a504c38ab9555890d12315-1667579673.us-east-1.elb.amazonaws.com:80
+http://a7f5cbe85fa2041c8a06f21227f3b159-426201033.us-east-1.elb.amazonaws.com:80
+http://adb5014795a504c38ab9555890d12315-1667579673.us-east-1.elb.amazonaws.com:80
 juancarv
 juancarvcmu@gmail.com
