@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: bff-mobile-svc-deploy
+ namespace: bookstore-ns
+spec:
+ selector:
+  matchLabels:
+   app: bff-mobile-ms
+ replicas: 2
+ template:
+  metadata:
+   labels:
+    app: bff-mobile-ms
+  spec:
+   containers:
+    - name: bff-mobile-ms
+      image: juancarv/cmu-a3-bff-mobile:v2
+      ports:
+       - containerPort: 8081

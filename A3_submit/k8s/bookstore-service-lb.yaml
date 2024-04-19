@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: bookstore-svc-lb
+ namespace: bookstore-ns
+spec:
+ type: LoadBalancer
+ selector:
+  app: bookstore-ms
+ ports:
+  - port: 80
+    targetPort: 3001

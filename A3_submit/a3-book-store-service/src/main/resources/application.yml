@@ -1,0 +1,26 @@
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+      
+resilience4j:
+ circuitbreaker:
+  instances:
+   CircuitBreakerService:
+    registerHealthIndicator: true
+    eventConsumerBufferSize: 10
+    failureRateThreshold: 1 #number of rate percentage allowed
+    minimumNumberOfCalls: 1
+    automaticTransitionFromOpenToHalfOpenEnabled: false
+    waitDurationInOpenState: 60s
+    permittedNumberOfCallsInHalfOpenState: 1
+    slidingWindowSize: 1 #number of calls stored before open the circuit
+    slowCallRateThreshold: 1 # reate of slow calls in percentage
+    slidingWindowType: COUNT_BASED

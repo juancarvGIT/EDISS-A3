@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: bookstore-svc-deploy
+ namespace: bookstore-ns
+spec:
+ selector:
+  matchLabels:
+   app: bookstore-ms
+ replicas: 1
+ template:
+  metadata:
+   labels:
+    app: bookstore-ms
+  spec:
+   containers:
+    - name: bookstore-ms
+      image: juancarv/cmu-a3-book-store:v2
+      ports:
+       - containerPort: 3001
